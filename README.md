@@ -78,12 +78,20 @@ entries:
     version: 0.1.0
 generated: "2022-12-26T18:07:27.337893+01:00"
 
+Lo subimos al repo
+git add .
+git commit -m "release 0.1.0"
+git push origin gh-pages
 
-# Creación de un repo Helm
+# Testeamos
 
 
 # Install repo
-helm repo add k8sObs-as-helm https://github.com/gincol/helm-charts.git
+helm repo add gincol-charts https://gincol.github.io/helm-charts/
+helm install -f values.yaml springboot-normal --namespace dev gincol-charts/springboot
+
+En caso de necesitar upgrade:
+helm upgrade springboot-normal gincol-charts/springboot -f values.yaml -n dev
 
 # Install chart
 helm install -f dev/values.yaml springboot-obs ../springboot-helm-obs
