@@ -46,12 +46,17 @@ cr index, el cual crea el fichero index.html
 cr upload, que sube los packages a github releases
 
 Para este segundo necesitaremos crear un token developer.
-Una vez creado y anotado, creamos el fichero ~/.cr.yaml con este contenido
-export  CH_TOKEN=el_token_generado_en_github
+Una vez creado y anotado, creamos el fichero ~/.cr/cr.yaml con este contenido
+owner: XXXXX
+git-repo: helm-charts
+package-path: .deploy
+token: XXXXXXXXXX
+git-base-url: https://api.github.com/
+git-upload-url: https://uploads.github.com/
 
 ## Empaquetamos y subimos
 helm package charts/springboot --destination .deploy
-cr upload -o gincol -r helm-charts -p .deploy
+cr upload
 
 
 # Creación de un repo Helm
