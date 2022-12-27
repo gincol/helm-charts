@@ -58,12 +58,37 @@ git-upload-url: https://uploads.github.com/
 helm package charts/springboot --destination .deploy
 cr upload
 
+## Creamos el index
+cr index -i ./index.yaml
 
-# Creación de un repo Helm
+queda con este contenido:
 
+apiVersion: v1
+entries:
+  springboot:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-12-26T18:07:27.337882+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 6a23ff6695a106db8ae748f43bdc5d654cc1ba871ca4e0a28fb94029c69781f6
+    name: springboot
+    type: application
+    urls:
+    - https://github.com/gincol/helm-charts/releases/download/springboot-0.1.0/springboot-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-12-26T18:07:27.337893+01:00"
 
-# Install repo
-helm repo add k8sObs-as-helm https://github.com/gincol/helm-charts.git
+Lo subimos al repo
+git add .
+git commit -m "release 0.1.0"
+git push origin gh-pages
 
-# Install chart
-helm install -f dev/values.yaml springboot-obs ../springboot-helm-obs
+# Testeamos
+helm repo add gincol-charts https://gincol.github.io/helm-charts/
+helm install -f values.yaml springboot-normal --namespace dev gincol-charts/springboot
+
+En caso de necesitar upgrade:
+helm upgrade springboot-normal gincol-charts/springboot -f values.yaml -n dev
+
+Viendo el histórico de despliegues 
+helm history springboot-normal -n dev
