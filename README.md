@@ -84,14 +84,11 @@ git commit -m "release 0.1.0"
 git push origin gh-pages
 
 # Testeamos
-
-
-# Install repo
 helm repo add gincol-charts https://gincol.github.io/helm-charts/
 helm install -f values.yaml springboot-normal --namespace dev gincol-charts/springboot
 
 En caso de necesitar upgrade:
 helm upgrade springboot-normal gincol-charts/springboot -f values.yaml -n dev
 
-# Install chart
-helm install -f dev/values.yaml springboot-obs ../springboot-helm-obs
+Viendo el histórico de despliegues 
+helm history springboot-normal -n dev
