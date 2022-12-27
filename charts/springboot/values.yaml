@@ -43,6 +43,7 @@ probe:
 service:
   type: ClusterIP
   port: 80
+  serviceAnnotations: {}
 
 ingress:
   enabled: false
