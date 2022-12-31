@@ -3,16 +3,6 @@ entries:
   python:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-12-31T17:57:52.09182+01:00"
-    description: A Helm chart for Kubernetes
-    digest: 19554163d4d4aba2f596bee970641a52e0f7af79f4629db843ba31a9bb21a523
-    name: python
-    type: application
-    urls:
-    - https://github.com/gincol/helm-charts/releases/download/python-0.1.0/python-0.1.0.tgz
-    version: 0.2.0
-  - apiVersion: v2
-    appVersion: 1.16.0
     created: "2022-12-31T18:35:18.622988+01:00"
     description: A Helm chart for Kubernetes
     digest: 52b03471e566da1eefd804353e18b55ec905e7f6ff904789f0f74defac86467c
