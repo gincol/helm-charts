@@ -11,6 +11,16 @@ entries:
     urls:
     - https://github.com/gincol/helm-charts/releases/download/python-0.1.0/python-0.1.0.tgz
     version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-12-31T18:35:18.622988+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 52b03471e566da1eefd804353e18b55ec905e7f6ff904789f0f74defac86467c
+    name: python
+    type: application
+    urls:
+    - https://github.com/gincol/helm-charts/releases/download/python-0.1.0/python-0.1.0.tgz
+    version: 0.1.0
   springboot:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -22,4 +32,4 @@ entries:
     urls:
     - https://github.com/gincol/helm-charts/releases/download/springboot-0.1.0/springboot-0.1.0.tgz
     version: 0.2.0
-generated: "2022-12-31T17:57:52.091827+01:00"
+generated: "2022-12-31T18:35:18.622999+01:00"

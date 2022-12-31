@@ -1,4 +1,4 @@
-# Default values for python.
+# Default values for springboot.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -36,9 +36,14 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+probe:
+  livenessPath: ""
+  readinessPath: ""
+
 service:
   type: ClusterIP
   port: 80
+  serviceAnnotations: {}
 
 ingress:
   enabled: false
