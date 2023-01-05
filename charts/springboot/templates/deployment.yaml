@@ -37,6 +37,16 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
+          {{- if and .Values.configmap.enabled }}
+          envFrom:
+          - configMapRef:
+              name: {{ include "springboot.fullname" . }}
+          {{- end }}
+          {{- if and .Values.secret.enabled }}
+          envFrom:
+          - secretRef:
+              name: {{ include "springboot.fullname" . }}
+          {{- end }}
           livenessProbe:
             httpGet:
               path: {{ .Values.probe.livenessPath }}

@@ -45,6 +45,14 @@ service:
   port: 80
   serviceAnnotations: {}
 
+configmap:
+  enabled: false
+  values: {}
+
+secret:
+  enabled: false
+  values: {}
+
 ingress:
   enabled: false
   className: ""

@@ -22,4 +22,14 @@ entries:
     urls:
     - https://github.com/gincol/helm-charts/releases/download/springboot-0.1.0/springboot-0.1.0.tgz
     version: 0.2.0
-generated: "2022-12-31T18:35:18.622999+01:00"
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-01-05T12:03:59.46557+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 13e668517f731eeb9a1e129ae8a2293abd6464c61b848279e7db8e175e61a091
+    name: springboot
+    type: application
+    urls:
+    - https://github.com/gincol/helm-charts/releases/download/springboot-0.1.0/springboot-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-01-05T12:03:59.465581+01:00"
